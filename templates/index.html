@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spam Classifier</title>
     <style>
         body{
             text-align: center;
@@ -20,11 +20,24 @@
 </head>
 <body>
     <h1> Email Spam classifier</h1>
-    <form method ="post">
-        <textarea name="text" id="text" cols="30" rows="15" placeholder="Enter your email body"></textarea>
+    <form method ="post" action="/predict">
+        <textarea name="email-content" id="text" cols="30" rows="15" placeholder="Enter your email body">{{email_text}}
+
+        </textarea>
         <br>
         <button type="submit">Submit</button>
+        <a href="/">Reset</a>
 
     </form>
+    <div>
+        {% if predictions == 1 %}
+            <h2 style="color:rgb(245, 61, 61)">Spam</h2>
+         {% else %}
+            <h2 style="color:rgb(61, 245, 61)">Not Spam</h2>
+        {% endif %}
+    </div>
+
+
+
 </body>
 </html>
