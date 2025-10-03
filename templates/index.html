@@ -7,10 +7,11 @@
     <style>
         body{
             text-align: center;
+            background-color: #70A9A1;
         }
         button {
             padding: 10px;
-            background-color: #35b4f0;
+            background-color: #9EC1A3;
             color: white;
             border: none;
             cursor: pointer;
@@ -19,11 +20,14 @@
     </style>
 </head>
 <body>
-    <h1> Email Spam classifier</h1>
+    <h1 style ="color:#CFE0C3"> Email Spam classifier</h1>
+    <br>
+    <br>
     <form method ="post" action="/predict">
-        <textarea name="email-content" id="text" cols="30" rows="15" placeholder="Enter your email body">{{email_text}}
+        <textarea name="email-content" id="text" cols="100" rows="10" placeholder="Enter your email body" style ="background-color: rgb(236, 231, 231);">{{email_text}}
 
         </textarea>
+        <br>
         <br>
         <button type="submit">Submit</button>
         <a href="/">Reset</a>
@@ -31,9 +35,9 @@
     </form>
     <div>
         {% if predictions == 1 %}
-            <h2 style="color:rgb(245, 61, 61)">Spam</h2>
+            <h2 style="color:rgb(255, 103, 103)">Spam</h2>
          {% else %}
-            <h2 style="color:rgb(61, 245, 61)">Not Spam</h2>
+            <h2 style="color:rgb(126, 223, 126)">Not Spam</h2>
         {% endif %}
     </div>
 
